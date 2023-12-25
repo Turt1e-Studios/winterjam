@@ -21,6 +21,23 @@ public class PlayerController : MonoBehaviour
     private float _rollInput;
     private int _boostCount;
 
+    public void IncreaseBoost()
+    {
+        _boostCount++;
+        UpdateBoostText();
+    }
+    
+    IEnumerator Boost()
+    {
+        forwardSpeed *= boostMultiplier;
+        strafeSpeed *= boostMultiplier;
+        hoverSpeed *= boostMultiplier;
+        yield return new WaitForSeconds(boostDuration);
+        forwardSpeed /= boostMultiplier;
+        strafeSpeed /= boostMultiplier;
+        hoverSpeed /= boostMultiplier;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,23 +51,9 @@ public class PlayerController : MonoBehaviour
         // Set location of screen center
         _screenCenter.x = Screen.width * 0.5f;
         _screenCenter.y = Screen.height * 0.5f;
-
-        // Replace later
+        
         _boostCount = 3;
         UpdateBoostText();
-    }
-
-    // Change cursor mode for straight flying
-    void ChangeCursorMode()
-    {
-        // Player has to click on the screen at least once for this to work
-        Debug.Log("Cursor mode change");
-        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.Confined : CursorLockMode.Locked;
-    }
-
-    void UpdateBoostText()
-    {
-        boostText.text = "Boosts: " + _boostCount;
     }
 
     // Update is called once per frame
@@ -76,7 +79,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && _boostCount > 0)
         {
             _boostCount--;
-            boostEffect.Play();
+            //boostEffect.Play();
             StartCoroutine(Boost());
             UpdateBoostText();
         }
@@ -93,15 +96,17 @@ public class PlayerController : MonoBehaviour
             ChangeCursorMode();
         }
     }
-
-    IEnumerator Boost()
+    
+    // Change cursor mode for straight flying
+    void ChangeCursorMode()
     {
-        forwardSpeed *= boostMultiplier;
-        strafeSpeed *= boostMultiplier;
-        hoverSpeed *= boostMultiplier;
-        yield return new WaitForSeconds(boostDuration);
-        forwardSpeed /= boostMultiplier;
-        strafeSpeed /= boostMultiplier;
-        hoverSpeed /= boostMultiplier;
+        // Player has to click on the screen at least once for this to work
+        Debug.Log("Cursor mode change");
+        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.Confined : CursorLockMode.Locked;
+    }
+
+    void UpdateBoostText()
+    {
+        boostText.text = "Boosts: " + _boostCount;
     }
 }

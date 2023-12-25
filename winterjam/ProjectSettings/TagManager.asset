@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Present
   - House
+  - Star
   layers:
   - Default
   - TransparentFX
