@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
     private Transform _transform;
     private Vector3 _position;
     private Vector2 _lookInput, _screenCenter, _mouseDistance;
-    private float _forwardAcceleration = 2.5f, _strafeAcceleration = 2f, _hoverAcceleration = 2f;
+    private readonly float _forwardAcceleration = 2.5f;
+    private readonly float _strafeAcceleration = 2f;
+    private readonly float _hoverAcceleration = 2f;
     private float _activeForwardSpeed, _activeStrafeSpeed, _activeHoverSpeed;
     private float _rollInput;
     private int _boostCount;
@@ -86,7 +88,7 @@ public class PlayerController : MonoBehaviour
         _transform.position = _position;
 
         // Change cursor mode
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             ChangeCursorMode();
         }
