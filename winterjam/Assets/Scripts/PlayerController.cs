@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem boostEffect;
     [SerializeField] private TextMeshProUGUI boostText;
     [SerializeField] private float forwardSpeed = 25f, strafeSpeed = 7.5f, hoverSpeed = 5f;
     [SerializeField] private float lookRateSpeed = 90f;
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && _boostCount > 0)
         {
             _boostCount--;
+            boostEffect.Play();
             StartCoroutine(Boost());
             UpdateBoostText();
         }
