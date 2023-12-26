@@ -6,7 +6,7 @@ public class CollectScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _score = GameObject.Find("GameManager").GetComponent<Score>();
+        _score = GameObject.Find("Score").GetComponent<Score>();
     }
 
     private void OnCollisionEnter(Collision collision)

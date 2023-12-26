@@ -924,6 +924,8 @@ GameObject:
   - component: {fileID: 4318204322907673008}
   - component: {fileID: 4318204322904248720}
   - component: {fileID: 4318204322905379792}
+  - component: {fileID: 5032732285126600202}
+  - component: {fileID: 7971888882277035862}
   m_Layer: 0
   m_Name: ChristmasTree
   m_TagString: Untagged
@@ -1035,6 +1037,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5032732285126600202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318204322907374992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba430e4db2ee17f429d1b5339905a7a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPresents: 10
+  isBoost: 0
+--- !u!65 &7971888882277035862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318204322907374992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.031288527, y: 0.032898705, z: 0.04651947}
+  m_Center: {x: 0.0000000035773262, y: -0.000000004812531, z: 0.023296243}
 --- !u!1 &4318204322907375000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,7 +3040,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3578509617715030478, guid: 465d5e70328b5e54f844025ba11f4ffa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 465d5e70328b5e54f844025ba11f4ffa, type: 3}
 --- !u!4 &1181521899469291771 stripped
 Transform:
@@ -3085,7 +3115,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8144739277419935645, guid: c186062881ed0d54f8264c3707b74269, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c186062881ed0d54f8264c3707b74269, type: 3}
 --- !u!4 &1384201842931110526 stripped
 Transform:
@@ -3159,7 +3190,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7446911472867271503, guid: 94de026aa5d948f45bbe1c4f53d90810, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94de026aa5d948f45bbe1c4f53d90810, type: 3}
 --- !u!4 &3844328247958121106 stripped
 Transform:
@@ -3233,7 +3265,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3638522786758060127, guid: 647a21d44b0a2b84bb36affe9dbccc1c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 647a21d44b0a2b84bb36affe9dbccc1c, type: 3}
 --- !u!4 &5976236317030207948 stripped
 Transform:
@@ -3307,7 +3340,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -327095074539858586, guid: 811248086ebda9f47b1b3840df04ee40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 811248086ebda9f47b1b3840df04ee40, type: 3}
 --- !u!4 &6730175979293646163 stripped
 Transform:

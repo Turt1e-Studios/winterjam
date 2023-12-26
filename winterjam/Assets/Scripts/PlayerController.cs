@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private float _activeForwardSpeed, _activeStrafeSpeed, _activeHoverSpeed;
     private float _rollInput;
     private int _boostCount;
-
+    
     public void IncreaseBoost()
     {
         _boostCount++;
@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
         _screenCenter.x = Screen.width * 0.5f;
         _screenCenter.y = Screen.height * 0.5f;
         
-        _boostCount = 3;
         UpdateBoostText();
     }
 
