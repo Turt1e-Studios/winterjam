@@ -7,6 +7,7 @@ public class CollectScore : MonoBehaviour
     void Start()
     {
         _score = GameObject.Find("Score").GetComponent<Score>();
+        _score.ChangeScore(99);
     }
 
     private void OnCollisionEnter(Collision collision)

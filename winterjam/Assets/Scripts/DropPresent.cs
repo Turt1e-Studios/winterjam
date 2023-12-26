@@ -12,7 +12,6 @@ public class DropPresent : MonoBehaviour
     private void Start()
     {
         _presents = GameObject.Find("PresentsScore").GetComponent<Score>();
-        print(_presents);
     }
 
     // Update is called once per frame
