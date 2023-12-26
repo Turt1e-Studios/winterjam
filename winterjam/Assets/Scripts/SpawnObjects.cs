@@ -8,6 +8,7 @@ public class SpawnObjects : MonoBehaviour
     [SerializeField] private float heightRange;
     [SerializeField] private bool isOnGround;
     [SerializeField] private bool isRotated;
+    [SerializeField] private bool isHalfSubmerged;
     private MeshRenderer _renderer;
     private float _size;
 
@@ -18,7 +19,11 @@ public class SpawnObjects : MonoBehaviour
         _size = _renderer.bounds.size.y / 2;
         for (int i = 0; i < numberObjects; i++)
         {
-            if (isOnGround && isRotated)
+            if (isHalfSubmerged)
+            {
+                Instantiate(spawnObj, new Vector3(Random.Range(-bounds, bounds), _size / 2, Random.Range(-bounds, bounds)), spawnObj.transform.rotation);
+            }
+            else if (isOnGround && isRotated)
             {
                 Instantiate(spawnObj, new Vector3(Random.Range(-bounds, bounds), 0, Random.Range(-bounds, bounds)), spawnObj.transform.rotation);
             }

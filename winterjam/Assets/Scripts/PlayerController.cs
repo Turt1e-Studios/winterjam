@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         _transform.position = _position;
 
         // Change cursor mode
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ChangeCursorMode();
         }
